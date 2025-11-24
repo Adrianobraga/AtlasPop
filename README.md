@@ -1,16 +1,32 @@
-# React + Vite
+# 🌍 AtlasPop — Exploração de Países e Populações
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**AtlasPop** é uma aplicação web interativa que permite explorar informações sobre países ao redor do mundo, pesquisando, filtrando por região, favoritando e comparando dados. A aplicação é feita com **React, Vite e Tailwind CSS**, consumindo a **REST Countries API**.  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funcionalidades
 
-## React Compiler
+- Pesquisar países por nome.
+- Lista de países com **bandeira, nome e população**.
+- Filtrar por região/continente: Europa, América do Norte, Ásia, África, etc.
+- Página de detalhes do país:
+  - Capital  
+  - População  
+  - Idiomas  
+  - Moeda  
+  - Países vizinhos
+- Favoritar países e salvar no **localStorage**.
+- Comparação entre 2 ou 3 países.
+- Tema claro/escuro (opcional).
+- Layout responsivo e moderno com Tailwind CSS.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+---
 
-## Expanding the ESLint configuration
+## Tecnologias utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Vite** 
+- **React** 
+- **Tailwind CSS** 
+- **REST Countries API** 
+- **React Router** 
+- **LocalStorage** 
