@@ -27,6 +27,7 @@
 - **Vite** 
 - **React** 
 - **Tailwind CSS** 
-- **REST Countries API** 
+- **REST Countries API**
+- **Axios**
 - **React Router** 
 - **LocalStorage** 
