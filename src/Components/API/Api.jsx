@@ -3,11 +3,11 @@ import { useContext, useEffect } from "react";
 import { Context } from "../Context/Context";
 
 function Api () {
-    const {setBuscar} = useContext(Context);
+    const {setBuscar,Filter} = useContext(Context);
      useEffect(() => {
-    const Buscar = () => {
+    const Buscar = (filtrar) => {
     axios
-    .get("https://restcountries.com/v3.1/all?fields=name,flags,capital,region,population,languages,currencies,borders")
+    .get(`https://restcountries.com/v3.1/${filtrar ? filtrar : "all"}?fields=name,flags,capital,region,population,languages,currencies,borders`)
     .then((res) => {
         setBuscar(res.data)
     })
@@ -15,8 +15,8 @@ function Api () {
         console.log(error)
     })
     }
-        Buscar();
-  }, [setBuscar]);
+        Buscar(Filter);
+  }, [Filter,setBuscar]);
 
 }
 
