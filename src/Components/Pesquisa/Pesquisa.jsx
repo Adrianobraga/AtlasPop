@@ -1,15 +1,14 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Context } from "../Context/Context";
 function Pesquisa() {
-    const {setFilter,setNome} = useContext(Context);
-    const [valor, setValor] = useState("");
+    const {setFilter,setNome,Nome} = useContext(Context);
     return (
         <div className="p-4 sm:p-10 m-5 bg-slate-700 max-w-3xl mx-auto rounded-lg">
             <div className="flex flex-col sm:flex-row items-center gap-4">
                 
                 <input
-                    value={valor}
-                    onChange={(e) => setValor(e.target.value)}
+                    value={Nome}
+                    onChange={(e) => setNome(e.target.value)}
                     type="text"
                     className="border-2 border-solid w-full px-3 py-2 rounded"
                     placeholder="Digite sua pesquisa..."
@@ -26,9 +25,6 @@ function Pesquisa() {
                     <option value={"region/Oceania"}>Oceania</option>
                 </select>
 
-                <button onClick={(e) =>{setNome(valor)}} className="bg-blue-600 text-white w-full sm:w-auto px-4 py-2 rounded hover:bg-blue-700">
-                    Buscar
-                </button>
 
             </div>
         </div>

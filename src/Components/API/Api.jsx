@@ -13,11 +13,10 @@ function Api() {
         )
         .then((res) => {
           if (Nome) {
-            const Pais = res.data.find(
-              (country) =>
-                country.name.common.toLowerCase() === Nome.toLowerCase()
+            const resultados = res.data.filter((country) =>
+              country.name.common.toLowerCase().includes(Nome.toLowerCase())
             );
-            setBuscar(Pais ? [Pais] : []);
+            setBuscar(resultados);
           } else {
             setBuscar(res.data);
           }
