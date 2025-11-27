@@ -16,7 +16,6 @@
   - Moeda  
   - Países vizinhos
 - Favoritar países e salvar no **localStorage**.
-- Comparação entre 2 ou 3 países.
 - Tema claro/escuro (opcional).
 - Layout responsivo e moderno com Tailwind CSS.
 
