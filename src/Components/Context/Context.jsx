@@ -4,9 +4,15 @@ export const Context = createContext();
 
 export const ContextProvider = ({children}) => {
     const [Buscar,setBuscar] = useState([]);
+    const [Filter,setFilter] = useState("");
+    const [Nome,setNome] = useState();
     const valores = {
     Buscar:Buscar,
     setBuscar:setBuscar, 
+    Filter:Filter,
+    setFilter:setFilter,
+    Nome:Nome,
+    setNome:setNome,
  }
 
     return(
