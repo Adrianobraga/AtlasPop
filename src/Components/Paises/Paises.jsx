@@ -21,7 +21,7 @@ function Paises() {
                             <p className="text-sm text-slate-300">Moeda: {pais.currencies ? Object.values(pais.currencies).map(c => `${c.name} (${c.symbol})`).join(", "): "Não informado"}</p>
                             </div>
                             <div className="flex justify-end mt-4">
-                            <button onClick={() => toggleLike(index)} className="px-2 py-2 rounded bg-white"><img src={Like[index] ? "HeartLike.png" : "Heart.png"} alt="like" className="h-5"/></button>
+                            <button onClick={() => toggleLike(index)} className="px-2 py-2 rounded bg-white hover:bg-gray-400"><img src={Like[index] ? "HeartLike.png" : "Heart.png"} alt="like" className="h-5"/></button>
                             </div>
                             </div>
                 ))}
