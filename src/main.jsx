@@ -6,7 +6,6 @@ import { ContextProvider } from './Components/Context/Context'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import RootLayout from './Components/RootLayout'
 import Favorito from './Components/Favorito/Favorito'
-
 const router = createBrowserRouter([
   {
    path: "/",
