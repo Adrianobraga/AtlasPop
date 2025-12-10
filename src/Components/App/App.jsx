@@ -1,6 +1,6 @@
 import Paises from "../Paises/Paises"
 import Pesquisa from "../Pesquisa/Pesquisa"
-import Favorito from "../Favorito/Favorito"
+import Favoritobotao from "../Favorito/FavoritoBotão"
 import Api from "../API/Api"
 function App() {    
   return (
@@ -8,7 +8,7 @@ function App() {
     <Api />
     <Pesquisa />
     <Paises />
-    <Favorito />
+    <Favoritobotao />
     </>
   )
 }
