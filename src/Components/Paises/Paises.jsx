@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { Context } from "../Context/Context";
 
 function Paises() {
-    const { Buscar,Like,setLike,toggleLike } = useContext(Context);
+    const { Buscar,Like,toggleLike } = useContext(Context);
     return (
         <div className="p-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
