@@ -1,51 +1,58 @@
-import { createContext, useContext,useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export const Context = createContext();
 
-export const ContextProvider = ({children}) => {
-    const [Buscar,setBuscar] = useState([]);
-    const [Filter,setFilter] = useState("");
-    const [Nome,setNome] = useState();
-    const [Like, setLike] = useState({});
-    const mostrarFavoritos = true;
+export const ContextProvider = ({ children }) => {
+  const [Buscar, setBuscar] = useState([]);
+  const [Filter, setFilter] = useState("");
+  const [Nome, setNome] = useState("");
+  const mostrarFavoritos = true;
+  //Pega as informações do localstorage e guarda
+  const [Like, setLike] = useState(() => {
+    const stored = localStorage.getItem("likes");
+    return stored ? JSON.parse(stored) : {};
+  });
+  //Função que limpa o nome e o filtro
+  function Serasa() {
+    setNome(""); 
+    setFilter("");
+  }
 
-    const paisesFiltrados = mostrarFavoritos
+  useEffect(() => {
+    localStorage.setItem("likes", JSON.stringify(Like));
+  }, [Like]);
+
+  //Essa função filtra o pais de acordo com os favoritos
+  const paisesFiltrados = mostrarFavoritos
     ? Buscar.filter((pais) => Like[pais.name.common] === true)
     : Buscar;
 
- function toggleLike(index) {
+    //Essa função curte cada pais individualmente
+  function toggleLike(nomePais) {
     setLike((prev) => ({
       ...prev,
-      [index]: !prev[index],
+      [nomePais]: !prev[nomePais],
     }));
-    
-  const stored = JSON.parse(localStorage.getItem("id")) || [];
-
-  if (stored.includes(index)) {
-    const filtered = stored.filter(item => item !== index);
-    localStorage.setItem("id", JSON.stringify(filtered));
-  } else {
-    stored.push(index);
-    localStorage.setItem("id", JSON.stringify(stored));
   }
-     
-}
-    const valores = {
-    Buscar:Buscar,
-    setBuscar:setBuscar, 
-    Filter:Filter,
-    setFilter:setFilter,
-    Nome:Nome,
-    setNome:setNome,
-    Like:Like,
-    setLike:setLike,
-    toggleLike:toggleLike,
-    mostrarFavoritos:mostrarFavoritos,
-    paisesFiltrados:paisesFiltrados,
- }
-    return(
-     <Context.Provider value={valores}>
-        {children}
-     </Context.Provider>
-    )
-}
+
+  const valores = {
+    Buscar,
+    setBuscar,
+    Filter,
+    setFilter,
+    Nome,
+    setNome,
+    Like,
+    setLike,
+    toggleLike,
+    mostrarFavoritos,
+    paisesFiltrados,
+    Serasa:Serasa,
+  };
+
+  return (
+    <Context.Provider value={valores}>
+      {children}
+    </Context.Provider>
+  );
+};
