@@ -8,7 +8,7 @@ function Cards() {
             <div className="p-10">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     {paisesFiltrados.map((pais) => (
-                        <div key={pais.name.common} className="bg-slate-800 text-white p-4 rounded-xl shadow-xl hover:scale-105 duration-300 cursor-pointer w-full flex flex-col justify-between h-full">
+                        <div key={pais.name.common} className="bg-gradient-to-r from-gray-900 to-gray-700 text-white p-4 rounded-xl shadow-xl hover:scale-105 duration-300 cursor-pointer w-full flex flex-col justify-between h-full">
                                 <div>
                                 <div className="w-full h-40 bg-slate-600 rounded-lg mb-3 flex items-center justify-center">
                                 <img src={pais.flags.png} className="w-full h-40 object-cover rounded-lg" />
