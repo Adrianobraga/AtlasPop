@@ -6,8 +6,8 @@ function Paises() {
     return (
         <div className="p-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {Buscar.map((pais, index) => (
-                            <div key={index} className="bg-slate-800 text-white p-4 rounded-xl shadow-xl hover:scale-105 duration-300 cursor-pointer w-full flex flex-col justify-between h-full">
+                {Buscar.map((pais) => (
+                            <div key={pais.name.common} className="bg-slate-800 text-white p-4 rounded-xl shadow-xl hover:scale-105 duration-300 cursor-pointer w-full flex flex-col justify-between h-full">
                             <div>
                             <div className="w-full h-40 bg-slate-600 rounded-lg mb-3 flex items-center justify-center">
                             <img src={pais.flags.png} className="w-full h-40 object-cover rounded-lg" />
@@ -21,7 +21,7 @@ function Paises() {
                             <p className="text-sm text-slate-300">Moeda: {pais.currencies ? Object.values(pais.currencies).map(c => `${c.name} (${c.symbol})`).join(", "): "Não informado"}</p>
                             </div>
                             <div className="flex justify-end mt-4">
-                            <button onClick={() => toggleLike(index)} className="px-2 py-2 rounded bg-white hover:bg-gray-400"><img src={Like[index] ? "HeartLike.png" : "Heart.png"} alt="like" className="h-5"/></button>
+                            <button onClick={() => toggleLike(pais.name.common)} className="px-2 py-2 rounded bg-white hover:bg-gray-400"><img src={Like[pais.name.common] ? "HeartLike.png" : "Heart.png"} alt="like" className="h-5"/></button>
                             </div>
                             </div>
                 ))}
