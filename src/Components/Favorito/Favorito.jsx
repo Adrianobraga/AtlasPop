@@ -1,9 +1,15 @@
-function Favorito () {
-    return(
-    <>
-    <div className="h-20 w-20 p-5 bg-gray-400 hover:bg-gray-500 fixed bottom-10 right-10 rounded-full"><img className="h-10" src="HeartLike.png" alt="" /></div>
-    </>
-    )
-}
+import Voltar from "./Voltar/Voltar";
+import Cards from "./Cards/Cards";
+function Favorito() {
 
-export default Favorito;
+    return(
+          <>
+          <Cards></Cards>
+          <Voltar></Voltar>
+          </>
+        );
+        
+        
+    }
+    
+    export default Favorito;
